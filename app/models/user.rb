@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     has_many :posts
+    has_many :comments
 
     validates :username, :email, :password, presence: { message: ->(object, data) do
         "Hey, #{data[:attribute].downcase} is empty."
